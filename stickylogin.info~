@@ -1,0 +1,4 @@
+;$Id$
+name = Sticky Sidebar
+description = Sticky sidebar jquery plugin for drupal
+core = 6.x

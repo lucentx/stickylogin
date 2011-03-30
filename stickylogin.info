@@ -1,0 +1,4 @@
+;$Id$
+name = Sticky login
+description = Sticky login block for drupal. It adds the sticky sidebar jquery plugin to your drupal login block.
+core = 6.x

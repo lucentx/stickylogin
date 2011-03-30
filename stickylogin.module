@@ -1,0 +1,29 @@
+<?php
+//$Id$
+
+/**
+ * Implementation of hook_help()
+ */
+function stickylogin_help($path, $arg) {
+  if($path == 'admin/help#stickybar') {
+    $txt = "This module allows you to use the sticky sidebar jquery plugin in drupal";
+    $replace = array();
+    return '<p>'. t($txt, $replace) .'</p>';
+  }
+}
+
+/**
+ * Implementation of hook_init()
+ */
+function stickylogin_init() {
+  $MODULE_PATH = drupal_get_path('module', 'stickylogin');
+  drupal_add_js(
+    array('baseUrl'       => $GLOBALS['base_url'],
+          'stickybarPath' => $MODULE_PATH),
+    'setting'
+  );
+  drupal_add_css($MODULE_PATH .'/css/sticky.css');
+  drupal_add_js($MODULE_PATH .'/js/jquery.easing.1.3.js');
+  drupal_add_js($MODULE_PATH .'/js/stickysidebar.jquery.js');
+  drupal_add_js($MODULE_PATH .'/js/custom-js.js');
+}
